@@ -1,7 +1,9 @@
-print('SEJA BEM VINDO AO BANCO NOVO HORIZONTE !!')
+from time import sleep
+
+print('SEJA BEM VINDO AO BANK NEW HORIZON !!')
 nome = str(input('Por favor informe o seu nome: '))
 
-resp = int(input('Sr {} o senhor(a) possui cadastro no banco novo horizonte ? [0]não [1]sim: '.format(nome)))
+resp = int(input('Sr {} o senhor(a) possui cadastro no banco new horizon ? [0]não [1]sim: '.format(nome)))
 
 if resp == 0:
     x = int(input('sr(a) {} gostaria de realizar o cadastro [0]não [1]sim: '.format(nome)))
@@ -78,7 +80,7 @@ if resp == 1:
 
         fun = int(input('Seja bem vindo(a) sr(a) {} o que gostaria de realizar?\n[1]Saque [2]Deposito '
                         '[3]Consultar Câmbio [4]Emprestimo [5]Tranferencia [6]Saldo '
-                        '[7]Extrato\n[8]Consultar conta\n[9]Solitações\Informativos '
+                        '[7]Extrato\n[8]Consultar conta\n[9]Solitações\Informativos \n[10]Pagamento de contas'
                         '\nsr(a) {} Informe a sua escolha: '.format(nome, nome)))
         si = int(input('Informe a sua senha de 6 digitos:'))
         if si == 123456:
@@ -146,6 +148,7 @@ if resp == 1:
                     int(input('Informe a agencia sem digito:'))
                     float(input('Informe o valor de transferencia R$ '))
                     str(input('Informe o nome do destinatario:'))
+                    print('Nas operações de TED ou DOC Será cobrada uma taxa de R$ 10 por operações !')
                     print('OK,tranferencia concluida com sucesso !!\nVolte sempre!!')
                 elif ty == 4:
                     str(input('Transferencia PIX,Informe o nome do destinatario:'))
@@ -157,6 +160,19 @@ if resp == 1:
                         break
                     else:
                         print('Opção invalida !!')
+            elif fun == 10:
+                print('Iremos iniciar o pagamento de contas !!')
+                o = int(input('Informe o tipo de pagamento \n[1] BOLETO \n[2]CODIGO DE BARRAS:'))
+                if o == 1:
+                    input('Digite o BOLETO BANCARIO:\n')
+                    input('Informe o valor R$ ')
+                    sleep(2)
+                    print('PAGAMENTO REALIZADO COM SUCESSO!!')
+                if o == 2:
+                    input('Digite o CODIGO DE BARRAS bancario:\n')
+                    input('Informe o valor R$ ')
+                    sleep(2)
+                    print('PAGAMENTO REALIZADO COM SUCESSO!!')
         else:
             print('Opção invalida!!\nTente novamente!!')
     else:
